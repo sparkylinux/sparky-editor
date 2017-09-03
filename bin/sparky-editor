@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# This script choose and run right text editor
+# for Sparky applications
+# Created by Paweł "pavroo' Pijanowski 2015/11/12
+# Copyright 2015 under the GNU GPL2 License
+# Last update 2016/03/13
+
+if [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
+	/usr/bin/mousepad "$@"
+
+elif [ $(pidof marco) ] && [ -f /usr/bin/pluma ]; then
+	/usr/bin/pluma "$@"
+
+elif [ $(pidof kwin) ] && [ -f /usr/bin/kwrite ]; then
+	/usr/bin/kwrite "$@"
+
+elif [ $(pidof kwin_x11) ] && [ -f /usr/bin/kwrite ]; then
+	/usr/bin/kwrite "$@"
+
+elif [ $(pidof enlightenment) ] && [ -f /usr/bin/ecrire ]; then
+	/usr/bin/ecrire "$@"
+
+elif [ $(pidof gala) ] && [ -f /usr/bin/leafpad ]; then
+	/usr/bin/leafpad "$@"
+
+else
+	if [ -f /usr/bin/gnome-text-editor ]; then
+		gnome-text-editor "$@"
+
+	elif [ -f /bin/nano ]; then
+		/usr/bin/sparky-terminal -e /bin/nano "$@"
+
+	fi
+fi
