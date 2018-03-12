@@ -3,8 +3,8 @@
 # This script choose and run right text editor
 # for Sparky applications
 # Created by Paweł "pavroo' Pijanowski 2015/11/12
-# Copyright 2015 under the GNU GPL2 License
-# Last update 2016/03/13
+# Copyright 2015-2018 under the GNU GPL2 License
+# Last update 2018/03/12
 
 if [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
 	/usr/bin/mousepad "$@"
@@ -23,6 +23,9 @@ elif [ $(pidof enlightenment) ] && [ -f /usr/bin/ecrire ]; then
 
 elif [ $(pidof gala) ] && [ -f /usr/bin/leafpad ]; then
 	/usr/bin/leafpad "$@"
+
+elif [ $(pidof lxqt-policykit-agent) ] && [ -f /usr/bin/notepadqq ]; then
+	/usr/bin/notepadqq "$@"
 
 else
 	if [ -f /usr/bin/gnome-text-editor ]; then
