@@ -15,12 +15,7 @@
 #  Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
 
 if [ "$1" = "uninstall" ]; then
-	rm -f /opt/sparky/sparky-editor
 	rm -f /usr/bin/sparky-editor
 else
-	if [ ! -d /opt/sparky ]; then
-		mkdir -p /opt/sparky
-	fi
-	cp opt/* /opt/sparky/
 	cp bin/* /usr/bin/
 fi

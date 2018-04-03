@@ -4,7 +4,14 @@
 # for Sparky applications
 # Created by Paweł "pavroo' Pijanowski 2015/11/12
 # Copyright 2015-2018 under the GNU GPL2 License
-# Last update 2018/03/12
+# Last update 2018/03/29
+
+if [ -f /usr/bin/sparky-xterm ];then
+	SPARKYXTERM="/usr/bin/sparky-xterm"
+else
+	echo "sparky-xterm is missing... Exiting..."
+	exit 1
+fi
 
 if [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
 	/usr/bin/mousepad "$@"
@@ -32,7 +39,9 @@ else
 		gnome-text-editor "$@"
 
 	elif [ -f /bin/nano ]; then
-		/usr/bin/sparky-terminal -e /bin/nano "$@"
+		$SPARKYXTERM /bin/nano "$@"
 
 	fi
 fi
+
+exit 0
