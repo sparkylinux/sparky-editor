@@ -4,7 +4,7 @@
 # for Sparky applications
 # Created by Paweł "pavroo' Pijanowski 2015/11/12
 # Copyright 2015-2018 under the GNU GPL2 License
-# Last update 2018/03/29
+# Last update 2018/08/10
 
 if [ -f /usr/bin/sparky-xterm ];then
 	SPARKYXTERM="/usr/bin/sparky-xterm"
@@ -14,32 +14,32 @@ else
 fi
 
 if [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
-	/usr/bin/mousepad "$@"
+	mousepad "$@"
 
 elif [ $(pidof marco) ] && [ -f /usr/bin/pluma ]; then
-	/usr/bin/pluma "$@"
+	pluma "$@"
 
 elif [ $(pidof kwin) ] && [ -f /usr/bin/kwrite ]; then
-	/usr/bin/kwrite "$@"
+	kwrite "$@"
 
 elif [ $(pidof kwin_x11) ] && [ -f /usr/bin/kwrite ]; then
-	/usr/bin/kwrite "$@"
+	kwrite "$@"
 
 elif [ $(pidof enlightenment) ] && [ -f /usr/bin/ecrire ]; then
-	/usr/bin/ecrire "$@"
+	ecrire "$@"
 
 elif [ $(pidof gala) ] && [ -f /usr/bin/leafpad ]; then
-	/usr/bin/leafpad "$@"
+	leafpad "$@"
 
-elif [ $(pidof lxqt-policykit-agent) ] && [ -f /usr/bin/notepadqq ]; then
-	/usr/bin/notepadqq "$@"
+elif [ $(pidof openbox) ] && [ -f /usr/bin/leafpad ]; then
+	leafpad "$@"
 
 else
 	if [ -f /usr/bin/gnome-text-editor ]; then
 		gnome-text-editor "$@"
 
 	elif [ -f /bin/nano ]; then
-		$SPARKYXTERM /bin/nano "$@"
+		$SPARKYXTERM nano "$@"
 
 	fi
 fi

@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Dependencies:
 -------------
-a text editor (leafpad|mousepad|pluma|gedit|kwrite|nano|ecrire|notepadqq)
+a text editor (leafpad|mousepad|pluma|gedit|kwrite|nano|ecrire)
 sparky-xterm (>= 0.2.0)
 
 Install:
