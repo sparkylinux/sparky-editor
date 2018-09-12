@@ -4,7 +4,7 @@
 # for Sparky applications
 # Created by Paweł "pavroo' Pijanowski 2015/11/12
 # Copyright 2015-2018 under the GNU GPL2 License
-# Last update 2018/08/18
+# Last update 2018/09/13
 
 if [ -f /usr/bin/sparky-xterm ];then
 	SPARKYXTERM="/usr/bin/sparky-xterm"
@@ -19,8 +19,8 @@ if [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
 elif [ $(pidof marco) ] && [ -f /usr/bin/pluma ]; then
 	pluma "$@"
 
-#elif [ $(pidof kwin) ] && [ -f /usr/bin/kwrite ]; then
-#	kwrite "$@"
+elif [ $(pidof kwin_x11) ] && [ -f /usr/bin/featherpad ]; then
+	featherpad "$@"
 
 elif [ $(pidof kwin_x11) ] && [ -f /usr/bin/leafpad ]; then
 	leafpad "$@"
@@ -30,6 +30,9 @@ elif [ $(pidof enlightenment) ] && [ -f /usr/bin/ecrire ]; then
 
 elif [ $(pidof gala) ] && [ -f /usr/bin/leafpad ]; then
 	leafpad "$@"
+
+elif [ $(pidof lxqt-session) ] && [ -f /usr/bin/featherpad ]; then
+	featherpad "$@"
 
 elif [ $(pidof openbox) ] && [ -f /usr/bin/leafpad ]; then
 	leafpad "$@"
