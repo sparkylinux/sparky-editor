@@ -3,8 +3,8 @@
 # This script choose and run right text editor
 # for Sparky applications
 # Created by Paweł "pavroo' Pijanowski 2015/11/12
-# Copyright 2015-2018 under the GNU GPL2 License
-# Last update 2018/09/13
+# Copyright 2015-2019 under the GNU GPL2 License
+# Last update 2019/08/06
 
 if [ -f /usr/bin/sparky-xterm ];then
 	SPARKYXTERM="/usr/bin/sparky-xterm"
@@ -34,8 +34,12 @@ elif [ $(pidof gala) ] && [ -f /usr/bin/leafpad ]; then
 elif [ $(pidof lxqt-session) ] && [ -f /usr/bin/featherpad ]; then
 	featherpad "$@"
 
-elif [ $(pidof openbox) ] && [ -f /usr/bin/leafpad ]; then
-	leafpad "$@"
+elif [ $(pidof openbox) ]; then
+	if [ -f /usr/bin/leafpad ]; then
+		leafpad "$@"
+	elif [ -f /usr/bin/mousepad ]; then
+		mousepad "$@"
+	fi
 
 else
 	if [ -f /usr/bin/gnome-text-editor ]; then

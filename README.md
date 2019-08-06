@@ -1,7 +1,7 @@
 Sparky Editor
 Sparky Editor is a simply configuration script which chooses the right text editor for Sparky applications
 
-Copyright (C) 2015-2018 Paweł Pijanowski
+Copyright (C) 2015-2019 Paweł Pijanowski
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
