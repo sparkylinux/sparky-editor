@@ -3,17 +3,13 @@
 # This script choose and run right text editor
 # for Sparky applications
 # Created by Paweł "pavroo' Pijanowski 2015/11/12
-# Copyright 2015-2019 under the GNU GPL2 License
-# Last update 2019/08/06
+# Copyright 2015-2023 under the GNU GPL2 License
+# Last update 2023/03/09
 
-if [ -f /usr/bin/sparky-xterm ];then
-	SPARKYXTERM="/usr/bin/sparky-xterm"
-else
-	echo "sparky-xterm is missing... Exiting..."
-	exit 1
-fi
+if [ -f /usr/bin/spedit ]; then
+	spedit "$@"
 
-if [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
+elif [ $(pidof xfwm4) ] && [ -f /usr/bin/mousepad ]; then
 	mousepad "$@"
 
 elif [ $(pidof marco) ] && [ -f /usr/bin/pluma ]; then

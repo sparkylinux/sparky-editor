@@ -1,7 +1,7 @@
 Sparky Editor
 Sparky Editor is a simply configuration script which chooses the right text editor for Sparky applications
 
-Copyright (C) 2015-2019 Paweł Pijanowski
+Copyright (C) 2015-2023 Paweł Pijanowski
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Dependencies:
 -------------
-a text editor (leafpad|mousepad|pluma|gedit|nano|ecrire|featherpad)
+a text editor (spedit|leafpad|mousepad|pluma|gedit|nano|ecrire|featherpad)
 sparky-xterm (>= 0.2.0)
 
 Install:
